@@ -12,4 +12,8 @@ I valori che possono essere assunti dalla subnet mask dipendono dalle classi (se
 Le classi di indirizzi ip sono delle convenzioni che dipendono da come quegli indrizzi vengono utilizzati, in base ad esse può variare la struttura degli indirizzi stessi (in quanto a HOST e NET ID), di conseguenza anche la subnet mask relativa.
 
 Procedimento:
-Come prima cosa si definisce il numero di sottoreti desiderate (in questo caso 2) per poi dividere il numero massimo di dispositivi disponibili (256) per quel numero (256/2 = 128). Grazie a questa suddivisione possiamo dedurre che le combinazioni di indirizz
+Come prima cosa si definisce il numero di sottoreti desiderate (in questo caso 2 ) per poi dividere il numero massimo di dispositivi disponibili (256) per quel numero (256/2 = 128). Grazie a questa suddivisione possiamo dedurre i range che hl iindirizzi ip possono assumere nel de sottoreti. Come già spiegato, bisogna capire quanti bit vanno presi dall'hosID per comporre la netmask relativa alle due reti. Sapendo che le subnet sono 2 ossia 2^1 possiamo capire che il primo bit che porteremo via all'hostID sarà quello che ci serve, di conseguenza dato che nelle netmask gli uni devono stare vicini si otterrà la segue (scritta in binario):
+11111111.11111111.11111111.10000000 -> in decimanle : 255.255.255.128, con 128 indirizzi per sottorete.
+
+Conclusione:
+Abbiamo ottenuto due sottoreti con i relativi range di ip e la loro netmask. La cosa importante da tenere a mente è che il primo ip e l'ultimo, per la rete così come nelle subnet, sono riservati all'identificazione e al broadcast.
